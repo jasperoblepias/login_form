@@ -1,5 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Register from './Register';
+import Home from './Home';
+import '../css/App.css';
 
 function App() {
   return (
@@ -33,7 +35,7 @@ function App() {
 
       <div class="sign-up-container">
         <div class="new-user">
-          First time here? <a class="sign-up-text" href="#">Sign up</a>
+          First time here? <a class="sign-up-text" href= "Register.js" >Sign up</a>
         </div>
       </div>
     </div>
