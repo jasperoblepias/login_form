@@ -34,7 +34,7 @@ const login = () => {
 
       <div class="sign-up-container">
         <div class="new-user">
-          {/* First time here?<Link to="register">Sign up</Link> */}
+          First time here?<Link to="/register">Sign up</Link>
         </div>
       </div>
     </div>

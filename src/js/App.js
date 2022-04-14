@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
+import ReactDOM from "react-dom";
 
 import Register from './Register';
 import Dashboard from './Dashboard';
@@ -8,14 +9,16 @@ import Login from './Login';
 import '../css/App.css';
 
 
-function App() {
-    return (
-      <Router>
-            <Route path="/" component={Login} exact/> 
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/register" component={Register} />
-      </Router>
-    );
-  }
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+          <Route path="/" element={<Login />}/>
+          <Route path="register" element={<Register />} />
+          <Route path="dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
+  );
+}
 
-export default App;
+ReactDOM.render(<App />, document.getElementById("root"));
