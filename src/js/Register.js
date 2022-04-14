@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import '../css/Register.css';
 
 const Register = () => {
 
@@ -23,55 +24,49 @@ const Register = () => {
         localStorage.setItem('pwd', pwd);
 
         alert('User is registered');
-        
-     };
 
-     let navigate = useNavigate(); 
-     const routeChange = () =>{ 
-       let path = '/'; 
-       navigate(path);
-     }
+    };
+
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = '/';
+        navigate(path);
+    }
 
     return (
-        <div class="form_wrapper">
-            <div class="form_container">
-                <div class="row clearfix">
-                    <div class="">
-                        <form>
-                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                                <input type="number" name="studentID" placeholder="Student ID" required 
-                                value={id}
-                                onChange={(e) => setid(e.target.value)}/>
-                                <input name="lName" placeholder="Last Name" required 
-                                value={lName}
-                                onChange={(e) => setlName(e.target.value)}/>
-                                <input name="fName" placeholder="Given Name" required
-                                value={fName}
-                                onChange={(e) => setfName(e.target.value)} />
-                                <input name="mName" placeholder="Middle Name" required 
-                                value={mName}
-                                onChange={(e) => setmName(e.target.value)}/>
-                                <input name="college" placeholder="College" required
-                                value={college}
-                                onChange={(e) => setCollege(e.target.value)} />
-                                <input name="program" placeholder="Program Enrolled" required 
-                                value={program}
-                                onChange={(e) => setProgram(e.target.value)}/>
-                                <input type="number" name="yearLvl" placeholder="Year Level" required 
-                                value={yearLvl}
-                                onChange={(e) => setYearLvl(e.target.value)}/>
-                                <input name="pwd" placeholder="Password" required 
-                                value={pwd}
-                                onChange={(e) => setPwd(e.target.value)}/>
-                                <input type="password" name="password" placeholder="Confirm Password" required />
-                            </div>
-                            <input type={"submit"} onClick={handle} name="submit"></input>
-                            <button onClick={routeChange}> Back</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="form_container">
+            <form>
+                <ul>
+                    <li><input className="input_field" type="number" name="studentID" placeholder="Student ID" required
+                        value={id}
+                        onChange={(e) => setid(e.target.value)} /> </li>
+                    <li><input className="input_field" name="lName" placeholder="Last Name" required
+                        value={lName}
+                        onChange={(e) => setlName(e.target.value)} /></li>
+                    <li><input className="input_field" name="fName" placeholder="Given Name" required
+                        value={fName}
+                        onChange={(e) => setfName(e.target.value)} /></li>
+                    <li><input className="input_field" name="mName" placeholder="Middle Name" required
+                        value={mName}
+                        onChange={(e) => setmName(e.target.value)} /></li>
+                    <li><input className="input_field" name="college" placeholder="College" required
+                        value={college}
+                        onChange={(e) => setCollege(e.target.value)} /></li>
+                    <li><input className="input_field" name="program" placeholder="Program Enrolled" required
+                        value={program}
+                        onChange={(e) => setProgram(e.target.value)} /></li>
+                    <li><input className="input_field" type="number" name="yearLvl" placeholder="Year Level" required
+                        value={yearLvl}
+                        onChange={(e) => setYearLvl(e.target.value)} /></li>
+                    <li><input className="input_field" name="pwd" placeholder="Password" required
+                        value={pwd}
+                        onChange={(e) => setPwd(e.target.value)} /></li>
+                    <li><input className="input_field" type="password" name="password" placeholder="Confirm Password" required /></li>
+                </ul >
+                <input className='submitBtn' type={"submit"} onClick={handle} name="submit"></input>
+                <button className='cancelBtn' onClick={routeChange}> Back</button>
+            </form >
+        </div >
     )
 }
 
