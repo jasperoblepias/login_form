@@ -1,8 +1,32 @@
 import '../css/Login.css';
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
 
-const login = () => {
+const Login = () => {
+
+  const check = () => {
+    var id = localStorage.getItem('id');
+    var pwd = localStorage.getItem('pwd');
+    var fname = localStorage.getItem('fName');
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    
+    console.log(id)
+    console.log(pwd)
+    console.log(username)
+    console.log(password)
+    console.log(username === id)
+    console.log(pwd === password)
+
+    if (username === id && pwd === password) {
+      window.location = '/dashboard';
+      alert("welcome " + fname +" to the Student Portal");
+    } else {
+      alert("Username or password is incorrect!");
+    }
+  };
+
+
   return (
     <div class="login-page">
       <div class="login-container">
@@ -14,6 +38,7 @@ const login = () => {
                 type="text"
                 placeholder="Username"
                 required
+
               />
             </label>
           </div>
@@ -27,7 +52,7 @@ const login = () => {
               />
             </label>
           </div>
-          <div class="login-btn">Login</div>
+          <div class="login-btn" onClick={check}>Login</div>
           {/* <a class="forgot-text">Forgot password?</a> */}
         </form>
       </div>
@@ -41,4 +66,4 @@ const login = () => {
   )
 }
 
-export default login;
+export default Login;
