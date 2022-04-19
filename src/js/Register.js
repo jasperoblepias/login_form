@@ -14,16 +14,28 @@ const Register = () => {
     const [pwd, setPwd] = useState('');
 
     const handle = () => {
-        localStorage.setItem('id', id);
-        localStorage.setItem('lName', lName);
-        localStorage.setItem('fName', fName);
-        localStorage.setItem('mName', mName);
-        localStorage.setItem('college', college);
-        localStorage.setItem('program', program);
-        localStorage.setItem('yearLvl', yearLvl);
-        localStorage.setItem('pwd', pwd);
 
-        alert('User is registered');
+        if(id === "" || lName === "" || fName === "" 
+            || mName === "" || college === "" 
+            || program === "" || yearLvl === "" 
+            || pwd === ""){
+                alert('Please fill up the form');
+                document.myForm.submit();
+        } else {
+
+            localStorage.setItem('id', id);
+            localStorage.setItem('lName', lName);
+            localStorage.setItem('fName', fName);
+            localStorage.setItem('mName', mName);
+            localStorage.setItem('college', college);
+            localStorage.setItem('program', program);
+            localStorage.setItem('yearLvl', yearLvl);
+            localStorage.setItem('pwd', pwd);
+
+            
+            alert('User is registered');
+            routeChange();
+        }
 
     };
 
@@ -35,7 +47,7 @@ const Register = () => {
 
     return (
         <div class="form_container">
-            <form>
+            <form id="myForm">
                 <ul>
                     <li><input className="input_field" type="number" name="studentID" placeholder="Student ID" required
                         value={id}
@@ -63,7 +75,7 @@ const Register = () => {
                         onChange={(e) => setPwd(e.target.value)} /></li>
                     <li><input className="input_field" type="password" name="password" placeholder="Confirm Password" required /></li>
                 </ul >
-                <input className='submitBtn' type={"submit"} onClick={handle} name="submit"></input>
+                <input className='submitBtn' type="submit" onClick={handle} name="submit"></input>
                 <button className='cancelBtn' onClick={routeChange}> Back</button>
             </form >
         </div >
