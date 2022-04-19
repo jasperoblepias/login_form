@@ -25,7 +25,7 @@
 
 
 
-input {
+input, select {
   width: 100%;
   padding: 8px 10px 9px 35px;
   height: 35px;
@@ -38,38 +38,15 @@ input {
   background: #fafafa;
 }
 
-/* .submitBtn {
-  background: gold;
-  cursor: pointer;
-  color: #fff;
-  font-size: 1.1em;
+select{
   width: 45%;
-  height: 50px;
-  margin: 0 auto;
-  padding: 0;
-  display: inline-block;
-  line-height: 50px;
-  text-align: center;
-  -webkit-text-stroke: .05px black;
-} */
+  margin-right: 5%;
+
+}
 
 ul{
   list-style: none;
 }
-
-/* .cancelBtn {
-  background: grey;
-  cursor: pointer;
-  color: #fff;
-  font-size: 1.1em;
-  width: 45%;
-  height: 50px;
-  display: inline-block;
-  box-shadow: none;
-  line-height: 50px;
-  text-align: center;
-  margin-left: 5%;
-} */
 
 .submitBtn {
   background-color: #ffee00;
@@ -132,3 +109,4 @@ ul{
   filter: saturate(0.2) opacity(0.5);
   cursor: not-allowed;
 }
+

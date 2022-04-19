@@ -15,12 +15,12 @@ const Register = () => {
 
     const handle = () => {
 
-        if(id === "" || lName === "" || fName === "" 
-            || mName === "" || college === "" 
-            || program === "" || yearLvl === "" 
-            || pwd === ""){
-                alert('Please fill up the form');
-                document.myForm.submit();
+        if (id === "" || lName === "" || fName === ""
+            || mName === "" || college === ""
+            || program === "" || yearLvl === ""
+            || pwd === "") {
+            alert('Please fill up the form');
+            document.myForm.submit();
         } else {
 
             localStorage.setItem('id', id);
@@ -32,7 +32,6 @@ const Register = () => {
             localStorage.setItem('yearLvl', yearLvl);
             localStorage.setItem('pwd', pwd);
 
-            
             alert('User is registered');
             routeChange();
         }
@@ -64,12 +63,26 @@ const Register = () => {
                     <li><input className="input_field" name="college" placeholder="College" required
                         value={college}
                         onChange={(e) => setCollege(e.target.value)} /></li>
-                    <li><input className="input_field" name="program" placeholder="Program Enrolled" required
+                    <li><select className="input_field" name="program" placeholder="Program Enrolled" required
                         value={program}
-                        onChange={(e) => setProgram(e.target.value)} /></li>
-                    <li><input className="input_field" type="number" name="yearLvl" placeholder="Year Level" required
+                        onChange={(e) => setProgram(e.target.value)} >
+                        <option value="" disabled selected>Program </option>
+                        <option value="it">Information Technology</option>
+                        <option value="is">Information Systems</option>
+                        <option value="cs">Computer Science</option>
+                        </select>
+                    
+                        <select className="input_field" type="number" min="1" max="5" name="yearLvl" placeholder="Year Level" required
                         value={yearLvl}
-                        onChange={(e) => setYearLvl(e.target.value)} /></li>
+                        onChange={(e) => setYearLvl(e.target.value)} >
+                        <option value="" disabled selected>Year Level</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    </li>
                     <li><input className="input_field" name="pwd" placeholder="Password" required
                         value={pwd}
                         onChange={(e) => setPwd(e.target.value)} /></li>
